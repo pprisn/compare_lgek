@@ -1,0 +1,17 @@
+select        rpo.NUM as PLP,
+                 tr.TRANSFER_DATE as DT_BANK,
+                 PAYMENTS.POSTOFFICE_ID as ID_DB,
+                 PAYMENTS.FCNUMBER ,
+                 PAYMENTS.DATE_PAYM as DATA,
+                 PAYMENTS.TOTAL as SUMMA,
+                 PAYMENTS.FIO,
+                 PAYMENTS.pay_barcode
+from PAYMENTS
+left outer join PARTNER as P on PAYMENTS.PARTNER_ID = P.ID
+left outer join MAINPOSTOFFICE as M on PAYMENTS.MAINPOSTOFFICE_ID = M.ID
+left outer join transfers as tr on Payments.transfer_id = tr.ID
+left outer join registry_po as rpo on tr.REGISTRY_PO_ID = rpo.ID
+where PAYMENTS.DATE_PAYM >= '01.10.2019' and
+     rpo.NUM= 118132  and
+      ((PAYMENTS.PARTNER_ID = 623) or (PAYMENTS.PARTNER_ID =621) or (PAYMENTS.PARTNER_ID=622))
+     order by  PAYMENTS.FCNUMBER
