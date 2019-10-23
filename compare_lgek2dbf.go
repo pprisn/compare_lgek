@@ -32,7 +32,7 @@ func main() {
 	flag.Parse() //парсим флаги запуска программы
 	var floger *os.File
 	var err error
-	if floger, err = os.OpenFile("readdbf_lgek.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644) ; err != nil {
+	if floger, err = os.OpenFile("compare_lgek2dbf.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644) ; err != nil {
 		panic(err)
 	}
 	defer floger.Close()
