@@ -1,4 +1,5 @@
 *.dbf
 *.csv
+*.txt
 2019-10-22
 main_pps.go
