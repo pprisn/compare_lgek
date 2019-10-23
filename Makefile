@@ -1,4 +1,4 @@
-﻿TARGET=compare_lgek.exe
+﻿TARGET=compare_lgek2dbf.exe
 
 all: clean build
 
@@ -6,4 +6,4 @@ clean:
 	rm -rf $(TARGET)
 
 build:
-	go build -o $(TARGET) main.go
+	go build -o $(TARGET) compare_lgek2dbf.go

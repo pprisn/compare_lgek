@@ -12,6 +12,6 @@ left outer join MAINPOSTOFFICE as M on PAYMENTS.MAINPOSTOFFICE_ID = M.ID
 left outer join transfers as tr on Payments.transfer_id = tr.ID
 left outer join registry_po as rpo on tr.REGISTRY_PO_ID = rpo.ID
 where PAYMENTS.DATE_PAYM >= '01.10.2019' and
-     rpo.NUM= 118132  and
+     rpo.NUM= 121851  and
       ((PAYMENTS.PARTNER_ID = 623) or (PAYMENTS.PARTNER_ID =621) or (PAYMENTS.PARTNER_ID=622))
      order by  PAYMENTS.FCNUMBER
